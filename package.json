@@ -1,0 +1,8 @@
+{
+  "name": "hype5server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AMCorvi/hypeServe5.git",
+  "author": "AMCorvi <am@corvi.co>",
+  "license": "MIT"
+}
