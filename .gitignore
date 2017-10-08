@@ -1,0 +1,5 @@
+node_modules/
+flow-typed/
+.tern-port
+nvim-python.log_py3_rplugin
+nvim-python.log_py3_script

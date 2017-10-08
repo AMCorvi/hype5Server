@@ -1,0 +1,1 @@
+{"version":3,"sources":["server.js"],"names":["Corvate","name","corvi"],"mappings":";;AAEA,SAASA,OAAT,CAAiBC,IAAjB,EAAsC;AAClC,QAAMC,QAAgBD,OAAO,OAA7B;AACA,WAAO,EAAP;AACH","file":"server.js","sourcesContent":["// @flow\n\nfunction Corvate(name: string) :string{\n    const corvi: string = name + \"Corvi\";\n    return 14;\n}\n"]}
