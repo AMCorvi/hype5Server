@@ -1,1 +1,0 @@
-{"version":3,"sources":["server.js"],"names":["serve","name","corvi"],"mappings":";;;;;kBAEwBA,K;AAAT,SAASA,KAAT,CAAeC,IAAf,EAAqC;AAChD,QAAMC,QAAgBD,OAAO,OAA7B;AACA,WAAO,GAAP;AACH","file":"server.js","sourcesContent":["// @flow\n\nexport default function serve(name: string) :string {\n    const corvi: string = name + \"Corvi\";\n    return 888;\n}\n"]}
