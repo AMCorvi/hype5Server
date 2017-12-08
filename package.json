@@ -39,7 +39,7 @@
     "feathers-memory": "^1.3.0",
     "feathers-rest": "^1.8.0",
     "helmet": "^3.9.0",
-    "hype5": "0.0.5",
+    "hype5": "2.0.0",
     "serve-favicon": "^2.4.5",
     "winston": "^2.4.0"
   },

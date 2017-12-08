@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  server:
+    build: ./
+    volumes:
+      - ./:home/casperjs-tests/
+    ports:
+      - 80:3030
