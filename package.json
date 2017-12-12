@@ -2,7 +2,7 @@
   "name": "hype-serve-5",
   "description": "unofficial API for hypeMachine built on the 'hype5' npm package",
   "version": "0.0.0",
-  "homepage": "",
+  "frontendpage": "",
   "main": "src",
   "keywords": [
     "feathers"
@@ -24,11 +24,15 @@
   "scripts": {
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "start": "nodemon src/",
+    "start": "run-p  serve:api serve:frontend sass",
+    "serve:api": "nodemon ./src",
+    "serve:frontend": "browser-sync start --server ./public --files ./public/index.html ./public/styles/styles.css --port 80",
+    "sass": "sass --watch ./public/styles/styles.sass:./public/styles/styles.css",
     "mocha": "mocha test/ --recursive --exit"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "browser-sync": "2.18.13",
     "compression": "^1.7.1",
     "cors": "^2.8.4",
     "feathers": "^2.2.2",
@@ -40,6 +44,8 @@
     "feathers-rest": "^1.8.0",
     "helmet": "^3.9.0",
     "hype5": "2.0.0",
+    "npm-run-all": "4.1.2",
+    "prettier": "^1.5.3",
     "serve-favicon": "^2.4.5",
     "winston": "^2.4.0"
   },
@@ -49,6 +55,7 @@
     "eslint": "^4.9.0",
     "eslint-watch": "^3.1.3",
     "jest": "^21.2.1",
+    "js-beautify": "1.7.5",
     "nodemon": "1.12.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins|Roboto");
+html, body {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background: #c21500;
+  background: linear-gradient(to bottom right, #ffc500, #c21500); }
+  html h1, html h2, html h3, html h4 {
+    font-family: "Poppins"; }
+  html p, html span, html div {
+    font-family: "Roboto";
+    font-weight: 200; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+.logo {
+  align-items: center;
+  height: 60vw;
+  width: 100%; }
+  .logo #logo {
+    background-image: url("../images/hype5server2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    height: 100%;
+    width: 100%; }
+
+.info {
+  background: rgba(255, 255, 255, 0.5);
+  border: solid 1px orangered;
+    border-bottom: yellow;
+    border-right: yellow;
+    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 100%;
+  width: 85%; }
+  .info #info {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%; }
+  .info .description {
+    color: #ff8000;
+    margin: 0 10%;
+      margin-top: 10%;
+    text-align: center;
+    text-stroke: 0.0001px slategrey;
+    -webkit-text-align: center;
+    -webkit-text-stroke: 0.0001px slategrey; }
+  .info .code {
+    background: #330001;
+    border-radius: 5px;
+    color: white;
+    height: 100%;
+    margin: 0 15%;
+      margin-top: 5%;
+      margin-bottom: 10%;
+    padding: 5% 5% 5%;
+    text-align: left; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin-top: 50px;
+  text-align: center;
+  width: 100%; }
+  footer p {
+    margin-top: 0px; }
+
+/*# sourceMappingURL=styles.css.map */

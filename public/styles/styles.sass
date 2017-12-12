@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto')
+
+html, body
+  margin: 0
+  padding: 0
+html
+  background: #c21500
+  background:  linear-gradient(to bottom right, #ffc500, #c21500) /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h1,h2,h3,h4
+    font:
+      family: 'Poppins'
+  p, span, div
+    font:
+      family: 'Roboto'
+      weight: 200
+
+body
+  display: flex
+  flex:
+    direction: column
+
+.logo
+  align-items: center
+  height: 60vw
+  width: 100%
+
+  #logo
+    background:
+      image: url("../images/hype5server2.png")
+      position: center
+      repeat: no-repeat
+      size: 70%
+    height: 100%
+    width: 100%
+
+
+.info
+  background: rgba( 255, 255, 255, .5)
+  border: solid 1px orangered
+    bottom: yellow
+    right: yellow
+    radius: 10px
+  display: flex
+  flex:
+    direction: column
+  align-self: center
+  height: 100%
+  width: 85%
+
+  #info
+    border:
+      radius: 10px
+    height: 100%
+    width: 100%
+
+  .description
+    color: mix(yellow, red, 50%)
+    margin: 0 10%
+      top: 10%
+    text:
+      align: center
+      stroke: .0001px slategrey
+    -webkit-text:
+      align: center
+      stroke: .0001px slategrey
+
+  .code
+    background: #330001
+    border:
+      radius: 5px
+    color: white
+    height: 100%
+    margin: 0 15%
+      top: 5%
+      bottom: 10%
+    padding: 05% 05% 05%
+    text-align: left
+
+
+
+footer
+  display: flex
+  justify-content: center
+  height: 10vh
+  margin:
+    top: 50px
+  text-align: center
+  width: 100%
+
+  p
+    margin:
+      top: 0px
+
