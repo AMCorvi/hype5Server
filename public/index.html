@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <title>Hype-5-Server</title>
 
-  <link rel="stylesheet"
-    href="styles/styles.css">
+  <link rel="stylesheet"href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
 
 </head>
 <body>
@@ -22,25 +24,59 @@
     <div class="info">
       <div class="description">
 
+        <h3>
+          Built and open-source project API which serves an aggragate of data from music blogs. The API operate via compiling all requested data via a web crawling and returns response afater web crawling completes. Project runs in Docker container.
+        </h3>
+
         <h4>
-          Lorem sequi odit perspiciatis nobis deserunt, dolorem Repudiandae sed quas porro voluptatum nostrum facilis. Doloribus enim officiis aut tenetur nisi. Sequi non placeat consequatur dolorem delectus Nobis distinctio aspernatur nemo aspernatur autem Ex reprehenderit voluptatum magnam exercitationem in. Quos
-        </h4>
+          Note: Given that this project is based on PhantomJS and is crawling web address that use javascript  responses will take a WHILE (avg on good connection 3-7sec #firstworldproblems). Therefore, design accordingly and use loaders and animation in places where the data is being requested. </h4>
+
+        <p>Valid Endpoint are as follows: </p>
+        <p>/hype or /hype/top - will recieve the top most popular tracks ranked this week as of today</p>
+        <p>/hype/remixes - will recieve the top remixes only most popular tracks ranked this week as of today</p>
+        <p>/hype/noremixes - will recieve the top original un-remixed tracks only most popular tracks ranked this week as of today</p>
+
+        <p>paramenters</p>
+        <p>type="popular" (e.g.: /hype/noremixes?type="popular") - this is the default behavior and will grab the most popular remixes</p>
+        <p>type="latest" (e.g.: /hype/noremixes?type="latest") - will recieve latest non-remixes sorted by rank</p>
 
       </div>
 
-      <code class="code">
-
-        var test = {
-          stuff: {
-            string: "no more object please"
-            number: 4
-        }
-
-      </code>
+      <p id="code">
 
 
+        [
+          [
+            {
+            "artist": "Grandbrothers",
+            "blogName": "The Line Of Best Fit",
+            "descrip": "Stream 'Open', the terrific new album from piano and electronics duo Grandbrothers",
+            "link": "https://www.thelineofbestfit.com/new-music/album-stream/grandbrothers-open",
+            "song": "Bloodflow",
+            "thumbnail": "background-color: rgb(255, 24, 16);"
+            },
+            {
+            "artist": "Emmit Fenn",
+            "blogName": "acid stag",
+            "descrip": "Each week I like to round up all of the tracks that have stood out to",
+            "link": "https://acidstag.com/2017/12/15/friday-favourites-december-15/",
+            "song": "Lost In Space",
+            "thumbnail": "background-color: rgb(0, 255, 0);"
+            },
+            {
+            "artist": "AMBIERE",
+            "blogName": "Little Indie Blogs",
+            "descrip": "Words: Sam Geary After the release of their debut EP, 'Tree of Life', at the start",
+            "link": "http://littleindieblogs.blogspot.com/2017/12/listen-ambiere-i-see-faces.html",
+            "song": "I See Faces",
+            "thumbnail": "background-color: rgb(74, 74, 74);"
+            }
+          ]
+        ]
 
+      </p>
     </div>
+
   <footer>
     <div class="claim"><span>Built for the community by</span>
       <a class="twHandle" href="http://twitter.com/amcorvi">@AMCorvi</a>
@@ -49,5 +85,24 @@
 
     </div>
   </footer>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+
+  <script src="./js/showdown.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      var codeContent = document.getElementById('code');
+      var converter = new showdown.Converter({extensions: ['htmlescape']});
+      text = codeContent.innerHTML,
+      html = converter.makeHtml(text);
+      codeContent.innerHTML = html;
+      hljs.initHighlighting();
+    })
+  </script>
+
 </body>
 </html>
