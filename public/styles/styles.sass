@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto')
+@font-face:
+  font-family: "Futura Thin"
+  src: url("../fonts/Futura Thin.ttf")
 
 html, body
   margin: 0
@@ -9,10 +11,10 @@ html
 
   h1,h2,h3,h4
     font:
-      family: 'Poppins'
+      family: 'Futura'
   p, span, div
     font:
-      family: 'Roboto'
+      family: 'Futura'
       weight: 200
 
 body
@@ -48,38 +50,97 @@ body
   height: 100%
   width: 85%
 
+  h1
+    text-decoration: underline
+
   #info
     border:
       radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
     height: 100%
     width: 100%
 
   .description
-    color: mix(yellow, red, 50%)
+    color: mix(purple, orange, 50%)
     margin: 0 10%
       top: 10%
     text:
       align: center
-      stroke: .0001px slategrey
-    -webkit-text:
+
+  #apidesc
+    text:
       align: center
-      stroke: .0001px slategrey
+
+    .apisection
+      display: inline-block
+      background: orange
+      padding: 2px 10px
+      border:
+        radius: 5px
+
+    .item
+
+
+      .endpointd
+        color: white
+        background: rgba(red, .5)
+        padding: 3px 5px
+        border:
+          radius: 5px
+
+      .rest
+        color: white
+        background: rgba(slategrey, .5)
+        padding: 3px 5px
+        border:
+          radius: 5px
+
+
+      .parameter
+        background: rgba(darkblue, .5)
+        color: white
+        padding: 3px 5px
+        border:
+          radius: 5px
+
+      .eg
+        color: white
+        background: rgba(peru, .5)
+        padding: 3px 5px
+        border:
+          radius: 5px
+
+    .param
+      color: white
+      background: black
+      display: block
+      margin: 0px
+      padding: 08px
 
   .code
     background: #330001
     border:
-      radius: 5px
+      radius: 20px
     color: white
     font:
       size: 1em
     height: 100%
     margin: 0 15%
       top: 5%
-      bottom: 10%
-    padding: 05% 05% 05%
+    // padding: 05% 05% 05%
     text-align: left
 
+  .features
+    list-style: none
 
+  .notm
+    margin-top: 0px
+
+  &:last-child
+    margin:
+      bottom: 10%
 
 footer
   display: flex

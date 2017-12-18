@@ -23,6 +23,7 @@
 
     <div class="info">
       <div class="description">
+      <h1>Hype5 Server</h1>
 
         <h3>
           Built and open-source project API which serves an aggragate of data from music blogs. The API operate via compiling all requested data via a web crawling and returns response afater web crawling completes. Project runs in Docker container.
@@ -31,18 +32,25 @@
         <h4>
           Note: Given that this project is based on PhantomJS and is crawling web address that use javascript  responses will take a WHILE (avg on good connection 3-7sec #firstworldproblems). Therefore, design accordingly and use loaders and animation in places where the data is being requested. </h4>
 
-        <p>Valid Endpoint are as follows: </p>
-        <p>/hype or /hype/top - will recieve the top most popular tracks ranked this week as of today</p>
-        <p>/hype/remixes - will recieve the top remixes only most popular tracks ranked this week as of today</p>
-        <p>/hype/noremixes - will recieve the top original un-remixed tracks only most popular tracks ranked this week as of today</p>
 
-        <p>paramenters</p>
-        <p>type="popular" (e.g.: /hype/noremixes?type="popular") - this is the default behavior and will grab the most popular remixes</p>
-        <p>type="latest" (e.g.: /hype/noremixes?type="latest") - will recieve latest non-remixes sorted by rank</p>
+
+      </div>
+      <div id="apidesc">
+
+        <h3 class="param">Valid Endpoint : </h3>
+        <p class="item"><span class="endpointd">/hype</span>or <span class="endpointd">/hype/top</span> - <span class="rest">GET</span>:  Will retrieve the top most popular tracks ranked this week as of today</p>
+        <p class="item"><span class="endpointd">/hype/remixes</span> - <span class="rest">GET</span>:  Will retrieve the top remixes only most popular tracks ranked this week as of today</p>
+        <p class="item"><span class="endpointd">/hype/noremixes</span> - <span class="rest">GET</span>: Will retrieve the top original un-remixed tracks only most popular tracks ranked this week as of today</p>
+
+        <h3 class="param">Parameters:</h3>
+        <h4 class="apisection">type ("popular" | "latest")</h4>
+        <p class="item"><span class="parameter">type="popular"</span> <span class="eg">(e.g.: /hype/noremixes?type="popular")</span> - This is the default behavior and will grab the most popular remixes</p>
+        <p class="item"><span class="parameter">type="latest"</span> <span class="eg">(e.g.: /hype/noremixes?type="latest")</span> - Will retrieve latest non-remixes sorted by rank</p>
 
       </div>
 
-      <p id="code">
+      <h4 class="description">Outputs follow the JSON scheme:</h4>
+      <p id="code" class="code">
 
 
         [
@@ -70,11 +78,27 @@
             "link": "http://littleindieblogs.blogspot.com/2017/12/listen-ambiere-i-see-faces.html",
             "song": "I See Faces",
             "thumbnail": "background-color: rgb(74, 74, 74);"
-            }
+            },
+
+            ....
           ]
         ]
 
       </p>
+
+      <div class="description notm">
+        <h2>
+          Features coming soon:
+        </h2>
+        <ul class="features">
+          <li>Paginaton</li>
+          <li>Historical Search dating back to 2007</li>
+          <li>Request top/latest songs by artist</li>
+          <li>Request top/latest songs by genre</li>
+          <li>Request for latest song by blog</li>
+        </ul>
+
+      </div>
     </div>
 
   <footer>

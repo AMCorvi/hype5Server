@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins|Roboto");
+@font-face: {
+  font-family: "Futura Thin";
+  src: url("../fonts/Futura Thin.ttf"); }
 html, body {
   margin: 0;
   padding: 0; }
@@ -7,9 +9,9 @@ html {
   background: #c21500;
   background: linear-gradient(to bottom right, #ffc500, #c21500); }
   html h1, html h2, html h3, html h4 {
-    font-family: "Poppins"; }
+    font-family: "Futura"; }
   html p, html span, html div {
-    font-family: "Roboto";
+    font-family: "Futura";
     font-weight: 200; }
 
 body {
@@ -39,29 +41,68 @@ body {
   align-self: center;
   height: 100%;
   width: 85%; }
+  .info h1 {
+    text-decoration: underline; }
   .info #info {
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%; }
   .info .description {
-    color: #ff8000;
+    color: #c05340;
     margin: 0 10%;
       margin-top: 10%;
-    text-align: center;
-    text-stroke: 0.0001px slategrey;
-    -webkit-text-align: center;
-    -webkit-text-stroke: 0.0001px slategrey; }
+    text-align: center; }
+  .info #apidesc {
+    text-align: center; }
+    .info #apidesc .apisection {
+      display: inline-block;
+      background: orange;
+      padding: 2px 10px;
+      border-radius: 5px; }
+    .info #apidesc .item .endpointd {
+      color: white;
+      background: rgba(255, 0, 0, 0.5);
+      padding: 3px 5px;
+      border-radius: 5px; }
+    .info #apidesc .item .rest {
+      color: white;
+      background: rgba(112, 128, 144, 0.5);
+      padding: 3px 5px;
+      border-radius: 5px; }
+    .info #apidesc .item .parameter {
+      background: rgba(0, 0, 139, 0.5);
+      color: white;
+      padding: 3px 5px;
+      border-radius: 5px; }
+    .info #apidesc .item .eg {
+      color: white;
+      background: rgba(205, 133, 63, 0.5);
+      padding: 3px 5px;
+      border-radius: 5px; }
+    .info #apidesc .param {
+      color: white;
+      background: black;
+      display: block;
+      margin: 0px;
+      padding: 8px; }
   .info .code {
     background: #330001;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
     font-size: 1em;
     height: 100%;
     margin: 0 15%;
       margin-top: 5%;
-      margin-bottom: 10%;
-    padding: 5% 5% 5%;
     text-align: left; }
+  .info .features {
+    list-style: none; }
+  .info .notm {
+    margin-top: 0px; }
+  .info:last-child {
+    margin-bottom: 10%; }
 
 footer {
   display: flex;
