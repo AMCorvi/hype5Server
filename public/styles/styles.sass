@@ -15,6 +15,7 @@ html
   p, span, div
     font:
       family: 'Futura'
+      size: 1.04em
       weight: 200
 
 body
@@ -73,7 +74,7 @@ body
     text:
       align: center
 
-    .apisection
+    .param
       display: inline-block
       background: orange
       padding: 2px 10px
@@ -112,17 +113,19 @@ body
         border:
           radius: 5px
 
-    .param
+    .apisection
       color: white
-      background: black
+      background: orangered
+      box-shadow: 0px 10px 33px orangered
       display: block
-      margin: 0px
+      margin: 5% auto
       padding: 08px
 
   .code
     background: #330001
     border:
       radius: 20px
+    box-shadow: 5px 10px 33px black
     color: white
     font:
       size: 1em
@@ -133,14 +136,24 @@ body
     text-align: left
 
   .features
+    text-align: center
     list-style: none
 
   .notm
     margin-top: 0px
 
+  .final
+    background: black
+    margin: 0px
+      top: 52px
+    box-shadow: 0px -3px 12px black
+    width: 100%
+
   &:last-child
     margin:
       bottom: 10%
+
+
 
 footer
   display: flex

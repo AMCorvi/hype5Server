@@ -12,6 +12,7 @@ html {
     font-family: "Futura"; }
   html p, html span, html div {
     font-family: "Futura";
+    font-size: 1.04em;
     font-weight: 200; }
 
 body {
@@ -57,7 +58,7 @@ body {
     text-align: center; }
   .info #apidesc {
     text-align: center; }
-    .info #apidesc .apisection {
+    .info #apidesc .param {
       display: inline-block;
       background: orange;
       padding: 2px 10px;
@@ -82,15 +83,17 @@ body {
       background: rgba(205, 133, 63, 0.5);
       padding: 3px 5px;
       border-radius: 5px; }
-    .info #apidesc .param {
+    .info #apidesc .apisection {
       color: white;
-      background: black;
+      background: orangered;
+      box-shadow: 0px 10px 33px orangered;
       display: block;
-      margin: 0px;
+      margin: 5% auto;
       padding: 8px; }
   .info .code {
     background: #330001;
     border-radius: 20px;
+    box-shadow: 5px 10px 33px black;
     color: white;
     font-size: 1em;
     height: 100%;
@@ -98,9 +101,16 @@ body {
       margin-top: 5%;
     text-align: left; }
   .info .features {
+    text-align: center;
     list-style: none; }
   .info .notm {
     margin-top: 0px; }
+  .info .final {
+    background: black;
+    margin: 0px;
+      margin-top: 52px;
+    box-shadow: 0px -3px 12px black;
+    width: 100%; }
   .info:last-child {
     margin-bottom: 10%; }
 
