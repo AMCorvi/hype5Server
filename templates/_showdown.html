@@ -1,0 +1,17 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+</script>
+
+<script src="./js/showdown.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var codeContent = document.getElementById('code');
+    var converter = new showdown.Converter({
+      extensions: ['htmlescape']
+    });
+    text = codeContent.innerHTML,
+      html = converter.makeHtml(text);
+    codeContent.innerHTML = html;
+    hljs.initHighlighting();
+  })
+</script>
