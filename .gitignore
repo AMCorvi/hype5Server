@@ -4,6 +4,9 @@
 nvim-python.log_py3_rplugin
 nvim-python.log_py3_script
 
+# GO Development Env Support
+./src/github.com
+
 # Logs
 logs
 *.log
