@@ -35,9 +35,11 @@ func main() {
 	http.ListenAndServe(":8000", nil)
 }
 
-func populateTemplates() *template.Template {
+func processTemplates() *template.Template {
 	result := template.New("templates")
 	const basePath = `templates`
 	template.Must(result.ParseGlob(basePath + "/*.html"))
 	return result
 }
+
+
