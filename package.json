@@ -3,7 +3,7 @@
   "description": "unofficial API for hypeMachine built on the 'hype5' npm package",
   "version": "0.0.0",
   "frontendpage": "",
-  "main": "src",
+  "main": "server",
   "keywords": [
     "feathers"
   ],
@@ -14,7 +14,7 @@
   "contributors": [],
   "bugs": {},
   "directories": {
-    "lib": "src",
+    "lib": "server",
     "test": "test/"
   },
   "engines": {
@@ -23,9 +23,9 @@
   },
   "scripts": {
     "test": "npm run eslint && npm run mocha",
-    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "eslint": "eslint server/. test/. --config .eslintrc.json",
     "start": "run-p  serve:api serve:frontend sass",
-    "serve:api": "nodemon ./src",
+    "serve:api": "nodemon ./server",
     "serve:frontend": "browser-sync start --server ./public --files ./public/index.html ./public/styles/styles.css --port 80",
     "sass": "sass --watch ./public/styles/styles.sass:./public/styles/styles.css",
     "mocha": "mocha test/ --recursive --exit"
