@@ -1,24 +1,43 @@
 package main
 
 import (
-	"fmt"
+	"html/template"
+	"log"
 	"net/http"
 )
 
-type home struct {
-	welcomeMessage string
-}
-
-func (h home) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("%s", h.welcomeMessage)))
-}
-
 func main() {
+	// Setup template prior to handling requests
+	templates := populateTemplates()
+
+	// Base URL
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hype is on the Server"))
+
+		requestedFile := r.URL.Path[1:] /* remove char '/' first */
+
+		t := templates.Lookup(requestedFile + ".html")
+		if t != nil {
+			err := t.Execute(w, nil)
+			if err != nil {
+				log.Println(err)
+			} else {
+				w.WriteHeader(http.StatusNotFound)
+			}
+		}
 	})
 
-	http.Handle("/cardi", &home{welcomeMessage: "Making Shmoney moves"})
+	// Static public files
+	http.Handle("/images/", http.FileServer(http.Dir("public")))
+	http.Handle("/styles/", http.FileServer(http.Dir("public")))
+	http.Handle("/js/", http.FileServer(http.Dir("public")))
 
+	// 	Set server to listen on port 8000
 	http.ListenAndServe(":8000", nil)
+}
+
+func populateTemplates() *template.Template {
+	result := template.New("templates")
+	const basePath = `templates`
+	template.Must(result.ParseGlob(basePath + "/*.html"))
+	return result
 }
