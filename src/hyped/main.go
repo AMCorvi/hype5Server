@@ -2,27 +2,30 @@ package main
 
 import (
 	"html/template"
+	"hyped/viewmodel"
 	"log"
 	"net/http"
 )
 
 func main() {
 	// Setup template prior to handling requests
-	templates := populateTemplates()
+	templates := processTemplates()
 
 	// Base URL
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 		requestedFile := r.URL.Path[1:] /* remove char '/' first */
 
+
 		t := templates.Lookup(requestedFile + ".html")
 		if t != nil {
-			err := t.Execute(w, nil)
+      context := viewmodel.NewBase()
+			err := t.Execute(w, context)
 			if err != nil {
 				log.Println(err)
-			} else {
-				w.WriteHeader(http.StatusNotFound)
 			}
+		} else {
+			w.WriteHeader(http.StatusNotFound)
 		}
 	})
 
@@ -41,5 +44,3 @@ func processTemplates() *template.Template {
 	template.Must(result.ParseGlob(basePath + "/*.html"))
 	return result
 }
-
-

@@ -7,6 +7,9 @@ nvim-python.log_py3_script
 # GO Development Env Support
 ./src/github.com
 
+# Misc
+ .notes
+
 # Logs
 logs
 *.log
