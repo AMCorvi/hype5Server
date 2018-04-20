@@ -2,8 +2,7 @@ package main
 
 import (
 	"html/template"
-	"hyped/viewmodel"
-	"log"
+	"hyped/controlla"
 	"net/http"
 )
 
@@ -11,28 +10,11 @@ func main() {
 	// Setup template prior to handling requests
 	templates := processTemplates()
 
-	// Base URL
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+  // Handle request for statics resourses
+  controlla.InitializeStatic()
 
-		requestedFile := r.URL.Path[1:] /* remove char '/' first */
-
-
-		t := templates.Lookup(requestedFile + ".html")
-		if t != nil {
-      context := viewmodel.NewBase()
-			err := t.Execute(w, context)
-			if err != nil {
-				log.Println(err)
-			}
-		} else {
-			w.WriteHeader(http.StatusNotFound)
-		}
-	})
-
-	// Static public files
-	http.Handle("/images/", http.FileServer(http.Dir("public")))
-	http.Handle("/styles/", http.FileServer(http.Dir("public")))
-	http.Handle("/js/", http.FileServer(http.Dir("public")))
+  // Handle request for defined endpoints
+  controlla.InitializeRoutes(templates)
 
 	// 	Set server to listen on port 8000
 	http.ListenAndServe(":8000", nil)
