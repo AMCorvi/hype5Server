@@ -18,6 +18,5 @@ func (i index) ApplyEndpoint() {
 
 func (i index) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	vm := viewmodel.NewBase()
-
 	i.indexTemplate.Execute(w, vm)
 }
