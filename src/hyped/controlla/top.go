@@ -1,18 +1,18 @@
 package controlla
 
-import "net/http"
+import (
+	"hyped/model"
+	"net/http"
+)
 
 type top struct {
-	topTemplate *template.Template
 }
 
 func (t top) ApplyEndpoint() {
-	http.HandlerFunc("/top", t.topHandler)
-	http.HandlerFunc("/top/*", t.topHandler)
+	http.HandleFunc("/top", t.topHandler)
 }
 
-func (t top) ApplyEndpoint(w http.ResponseWriter, r *http.Request) {
-  var trackInfo string
-  vm := viewModel.NewHypePattern(trackInfo)
-  s.topTemplate.Execute(w, vm)
+func (t top) topHandler(w http.ResponseWriter, r *http.Request) {
+	trackData := model.QueryTrackData()
+	w.Write(trackData)
 }

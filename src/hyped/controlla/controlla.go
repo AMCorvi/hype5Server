@@ -7,7 +7,8 @@ import (
 
 // Register Controllers
 var (
-  indexController index
+	indexController index
+  topController top
 )
 
 // InitializeStatic manages routing setup and static files
@@ -19,13 +20,14 @@ func InitializeStatic() {
 }
 
 // Assign templates to the respective controllers
-func configureTemplates(templates *template.Template){
-  indexController.indexTemplate = templates.Lookup("index.html")
+func configureTemplates(templates *template.Template) {
+	indexController.indexTemplate = templates.Lookup("index.html")
 }
 
 // Apply Route Handlers
 func InitializeRoutes(templates *template.Template) {
-  configureTemplates(templates)
+	configureTemplates(templates)
 
-  indexController.ApplyEndpoint()
+	indexController.ApplyEndpoint()
+	topController.ApplyEndpoint()
 }

@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	// Setup template prior to handling requests
 	templates := processTemplates()
 
@@ -18,6 +19,7 @@ func main() {
 
 	// 	Set server to listen on port 8000
 	http.ListenAndServe(":8000", nil)
+
 }
 
 func processTemplates() *template.Template {
