@@ -29,7 +29,7 @@ class Service {
 
   get (id, params) {
 
-    //Determin if ID is equal top || remixes || noremixes
+    //Determine if ID is equal top || remixes || noremixes
     if ( !id === ( "top"||"remixes"||"noremixes" ) ) {
       return Promise.resolve({
         err: {
